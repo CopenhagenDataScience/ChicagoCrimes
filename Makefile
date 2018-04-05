@@ -1,6 +1,9 @@
-.PHONY: all data
+.PHONY: all data deps
 
-all: data
+all: deps data
 
 data:
 			Rscript scripts/download_data.R $(FORCE)
+			
+deps:
+			Rscript scripts/packages.R 
